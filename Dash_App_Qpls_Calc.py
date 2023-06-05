@@ -131,7 +131,7 @@ def calc_qpls(daily_closing_prices):
         E = (2*nn+1)*((c1-c0/2)**(1/3)-(c1+c0/2)**(1/3)) / E0
         EE = E if n >= 0 else -E
         
-        return 1 + std * EE
+        return 1 + std * EE # return 1 + 0.21 * std * EE
     
     qpls = numpy.vectorize(E)(numpy.arange(61)-30) * daily_closing_prices.iloc[-1] # quantum price levels
     
